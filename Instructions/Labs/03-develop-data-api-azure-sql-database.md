@@ -172,7 +172,7 @@ Azure Static Web Apps を作成する前に、GitHub で基本的な Web アプ�
 
 1. Azure portal で、作成した Azure Static Web アプリに移動します。
 1. [概要] ページで、Web アプリの URL をコピーします。
-1. 新しいブラウザー タブを開いて、この URL を貼り付けます。 **Vanilla JavaScript アプリ**というメッセージが表示されたシンプルな Web ページが表示されます。
+1. 新しいブラウザー タブを開いて、この URL を貼り付けます。 **Vanilla JavaScript App**というメッセージが表示されたシンプルな Web ページが表示されます。
 1. URL の末尾に **/data-api** を追加し、**Enter** キーを押します。 Data API が動作していることを示すために、**[正常]** が表示されます。
 1. URL の末尾に **/data-api/rest/Employees** を追加し、**Enter** キーを押します。 Azure SQL Database に前に追加したサンプル データが表示されます。
 
