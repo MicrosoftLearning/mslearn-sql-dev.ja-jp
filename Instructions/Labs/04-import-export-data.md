@@ -151,7 +151,7 @@ lab:
     SECRET = '<your-sas-token>';
     ```
 
-    <your-sas-token> は、先ほど生成された Blob SAS トークンに置き換えます。
+    \<your-sas-token\> を先ほど生成された Blob SAS トークンに置き換えます。
 
 1. 最後に、Azure Blob Storage にアクセスするための**データ ソース**が必要です。 次の SQL コマンドを実行して、**データ ソース**を作成します。
 
@@ -164,7 +164,7 @@ lab:
     );
     ```
 
-    <your-storage-account-name> は、Azure ストレージ アカウントの名前に置き換えます。
+    \<your-storage-account-name\> を Azure ストレージ アカウントの名前に置き換えます。
 
 これで、**employees.json** ファイルから *Azure SQL Database* にデータをインポートするようにすべてが設定されました。
 
