@@ -62,7 +62,7 @@ lab:
 1. アカウントの **[Repositories]** に移動し、**[New]** を選択します。
 1. **Owner** のアカウントを選択します。 「**my-sql-db-repo**」という名前を入力します。
 1. リポジトリを **[Private]** に設定します。
-1. **[Create repository]** (リポジトリの作成) を選択します。
+1. **[Create repository]** を選択します。
 
 ### Visual Studio Code 拡張機能をインストールし、リポジトリを複製する
 
@@ -173,6 +173,7 @@ GitHub Actions を使用すると、お使いの GitHub リポジトリ内でソ
 1. **[set up a workflow yourself]** オプションを選択します。
 1. 次のコードを **main.yml** ファイルにコピーします。 このコードには、データベース プロジェクトをビルドしてデプロイする手順が含まれています。
 
+    {% raw %}
     ```yaml
     name: Build and Deploy SQL Database Project
     on:
@@ -208,8 +209,9 @@ GitHub Actions を使用すると、お使いの GitHub リポジトリ内でソ
               action: 'publish'
               build-arguments: '-c Release'
               arguments: '/p:DropObjectsNotInSource=true'  # Optional: Customize as needed
-      ```
-
+    ```
+    {% endraw %}
+   
       YAML ファイルの **SQL プロジェクトをビルドしてデプロイする**手順は、`AZURE_CONN_STRING` シークレットに格納されている接続文字列を使用して Azure SQL Database に接続します。 このアクションは、SQL プロジェクト ファイルへのパスを指定し、プロジェクトをデプロイするために発行するアクションを設定し、リリース モードでコンパイルするビルド引数を含めます。 さらに、`/p:DropObjectsNotInSource=true` 引数を使用して、ソースに存在しないオブジェクトがデプロイ中にターゲット データベースから削除されるようにします。
 
 1. 変更をコミットします。
