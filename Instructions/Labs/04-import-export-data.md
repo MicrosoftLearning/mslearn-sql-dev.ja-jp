@@ -27,6 +27,7 @@ lab:
 
 この手順では、Azure にデータベースを作成します。
 
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 1. Azure portal で、**[SQL データベース]** ページに移動します。
 1. **［作成］** を選択します
 1. 必須フィールドに入力します。
@@ -35,20 +36,21 @@ lab:
     |---|---|
     | 無料のサーバーレス オファー | オファーの適用 |
     | サブスクリプション | 該当するサブスクリプション |
-    | リソース グループ | 新しいリソース グループを選択または作成します |
+    | リソース グループ | *新しいリソース グループを選択または作成します* |
     | データベース名 | **MyDB** |
-    | [サーバー] | 新しいサーバーを選択または作成します |
+    | [サーバー] | ***[新規作成]** リンクを選択します* |
+    | サーバー名 | *一意の名前を選択する* |
+    | Location | *場所を選択してください* |
     | 認証方法 | SQL 認証 |
     | サーバー管理者のログイン | **sqladmin** |
-    | Password | セキュリティで保護されたパスワードを入力します |
-    | [パスワードの確認入力] | パスワードを確認します |
+    | Password | *安全なパスワードを入力する* |
+    | [パスワードの確認入力] | *パスワードを確認します* |
 
 1. **[確認および作成]** 、 **[作成]** の順に選択します。
 1. デプロイが完了したら、***[Azure SQL サーバー]*** (Azure SQL Database ではありません) の **[ネットワーク]** セクションに移動します。
     1. IP アドレスをファイアウォール規則に追加します。 これにより、SQL Server Management Studio (SSMS) または Azure Data Studio を使用してデータベースを管理できるようになります。
     1. **[Azure サービスおよびリソースにこのサーバーへのアクセスを許可する]** チェックボックスをオンにします。 これにより、Azure 関数アプリからデータベース サーバーにアクセスできるようになります。
     1. 変更を保存。
-1. **[Azure SQL サーバー]** の **[Microsoft Entra ID]** セクションに移動し、**[このサーバーの Microsoft Entra 専用認証をサポートする]** を必ず*選択解除*し、選択した場合は変更を **[保存]** します。 この例では SQL 認証を使用するため、Entra のみのサポートを無効にする必要があります。
 
 > [!NOTE]
 > 運用環境では、どの種類のアクセスに、どこからのアクセスを許可するかを決定する必要があります。 Entra 認証のみを選択した場合、関数は若干変更されますが、Azure 関数アプリがサーバーにアクセスできるようにするには、*[Azure サービスおよびリソースにこのサーバーへのアクセスを許可する]* を有効にする必要があることに注目してください。
@@ -231,7 +233,7 @@ SELECT * FROM dbo.employee_data;
     $functionappname = "YourUniqueFunctionAppName"
     $resourcegroup = "YourResourceGroupName"
     $location = "YourLocation"
-    # NOTE - The following should be a new storage account name where your Azure function will resided.
+    # NOTE - The following should be a new storage account name where your Azure function will reside.
     # It should not be the same Storage Account name used to store the JSON file
     $storageaccount = "YourStorageAccountName"
 
