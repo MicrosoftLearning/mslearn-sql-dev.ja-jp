@@ -2,6 +2,16 @@
 lab:
   title: Azure SQL Database プロジェクト用の CI/CD パイプラインを構成してデプロイする
   module: Develop for an Azure SQL Database
+  description: この演習では、Visual Studio Code と GitHub Actions を使って、Azure SQL Database プロジェクトのための CI/CD パイプラインを作成、構成、デプロイします。 これにより、Azure SQL Database プロジェクト用の CI/CD パイプラインを設定するプロセスを理解できます。
+  duration: 30 minutes
+  level: 500
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure SQL Database
+    - GitHub
+    - Visual Studio
+    - Visual Studio Code
 ---
 
 # Azure SQL Database プロジェクト用の CI/CD パイプラインを構成してデプロイする
@@ -212,34 +222,34 @@ GitHub Actions を使用すると、お使いの GitHub リポジトリ内でソ
     ```
     {% endraw %}
    
-      YAML ファイルの **SQL プロジェクトをビルドしてデプロイする**手順は、`AZURE_CONN_STRING` シークレットに格納されている接続文字列を使用して Azure SQL Database に接続します。 このアクションは、SQL プロジェクト ファイルへのパスを指定し、プロジェクトをデプロイするために発行するアクションを設定し、リリース モードでコンパイルするビルド引数を含めます。 さらに、`/p:DropObjectsNotInSource=true` 引数を使用して、ソースに存在しないオブジェクトがデプロイ中にターゲット データベースから削除されるようにします。
+      {% raw %} {% endraw %} YAML ファイルの **SQL プロジェクトをビルドしてデプロイする**手順は、`AZURE_CONN_STRING` シークレットに格納されている接続文字列を使用して Azure SQL Database に接続します。
+
+1. このアクションは、SQL プロジェクト ファイルへのパスを指定し、プロジェクトをデプロイするために発行するアクションを設定し、リリース モードでコンパイルするビルド引数を含めます。
+
+### さらに、`/p:DropObjectsNotInSource=true` 引数を使用して、ソースに存在しないオブジェクトがデプロイ中にターゲット データベースから削除されるようにします。
 
 1. 変更をコミットします。
+1. GitHub Actions ワークフローをテストする
+    > GitHub リポジトリで、**[Actions] (アクション)** タブを選択します。 **SQL Database プロジェクトをビルドしてデプロイする**ワークフローを選択します。 **注:** ワークフローが進行中であることがわかります。
 
-### GitHub Actions ワークフローをテストする
+### 完了するまで待ちます。
 
-1. GitHub リポジトリで、**[Actions] (アクション)** タブを選択します。
-1. **SQL Database プロジェクトをビルドしてデプロイする**ワークフローを選択します。
-    > **注:** ワークフローが進行中であることがわかります。 完了するまで待ちます。 既に完了している場合は、最新の実行を選択して詳細を表示します。
+既に完了している場合は、最新の実行を選択して詳細を表示します。
 
-### Azure SQL Database の変更を確認する
-
-GitHub Actions ワークフローを設定して、Azure SQL Database プロジェクトをビルドしてデプロイしたので、Azure SQL Database の変更を確認します。
-
-1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。 
+1. Azure SQL Database の変更を確認する 
+1. GitHub Actions ワークフローを設定して、Azure SQL Database プロジェクトをビルドしてデプロイしたので、Azure SQL Database の変更を確認します。
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 1. **MyDB** SQL Database に移動します。
-1. **[クエリ エディター]** を選択します。
-1. **sqladmin** 資格情報を使用してデータベースに接続します。
-1. **Tables** セクションで、**Employees** テーブルが作成されていることを確認します。 必要に応じて更新します。
+1. **[クエリ エディター]** を選択します。 **sqladmin** 資格情報を使用してデータベースに接続します。
 
-Azure SQL Database プロジェクトをビルドしてデプロイするための GitHub Actions ワークフローが正常に設定されました。
+**Tables** セクションで、**Employees** テーブルが作成されていることを確認します。
 
-## クリーンアップ
+## 必要に応じて更新します。
 
-独自のサブスクリプションを使用している場合は、プロジェクトの最後に、作成したリソースがまだ必要かどうかを確認してください。 
+Azure SQL Database プロジェクトをビルドしてデプロイするための GitHub Actions ワークフローが正常に設定されました。 
 
-リソースを不必要に実行したままにしておくと、追加コストが発生する可能性があります。 [Azure portal](https://portal.azure.com?azure-portal=true) でリソースを個別に削除することも、リソースのセット全体を削除することもできます。
+クリーンアップ 独自のサブスクリプションを使用している場合は、プロジェクトの最後に、作成したリソースがまだ必要かどうかを確認してください。
 
-## 詳細
+## リソースを不必要に実行したままにしておくと、追加コストが発生する可能性があります。
 
-Azure SQL Database 用の SQL Database プロジェクトの拡張機能の詳細については、「[SQL Database プロジェクトの拡張機能をお使いになる前に](https://learn.microsoft.com/azure-data-studio/extensions/sql-database-project-extension-getting-started?azure-portal=true)」をご覧ください。
+[Azure portal](https://portal.azure.com?azure-portal=true) でリソースを個別に削除することも、リソースのセット全体を削除することもできます。

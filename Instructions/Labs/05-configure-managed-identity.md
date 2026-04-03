@@ -2,6 +2,15 @@
 lab:
   title: Azure SQL Database のマネージド ID を構成する
   module: Explore Azure SQL Database safety practices for development
+  description: 次に、データベースへのアカウント アクセスを追加します。 Microsoft Entra を通じて認証されたアカウントのみが、この演習の後続の手順の前提条件である他の Microsoft Entra ID ユーザーを作成できるため、これが必要です。
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure SQL Database
+    - Microsoft Entra
+    - Microsoft Entra ID
 ---
 
 # Azure SQL Database のマネージド ID を構成する
