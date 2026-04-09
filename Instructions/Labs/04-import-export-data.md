@@ -2,6 +2,14 @@
 lab:
   title: Azure SQL Database での開発用にデータをインポートまたはエクスポートする
   module: Import and export data for development in Azure SQL Database
+  description: この演習では、データを外部 REST エンドポイントからインポートし (Azure Static Web App を使用してシミュレート)、Azure 関数を使用してエクスポートします。 このラボでは、REST API と Azure Functions を統合してデータのインポート/エクスポート操作を処理することに重点を置いて、開発目的で Azure SQL Database を操作する際の実用的な経験を提供します。
+  duration: 45 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Functions
+    - Azure SQL Database
 ---
 
 # Azure SQL Database での開発用にデータをインポートまたはエクスポートする

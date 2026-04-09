@@ -2,6 +2,13 @@
 lab:
   title: Azure SQL Database の自動フェールオーバー グループでアプリケーションの回復性を実現する
   module: Get started with Azure SQL Database for cloud-native application development
+  description: この演習では、プライマリとセカンダリとして機能する 2 つの Azure SQL データベースを作成します。 自動フェールオーバー グループを構成してアプリケーション データベースの高可用性とディザスター リカバリーを確保し、アプリケーション上のレプリケーションの状態を検証します。
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure SQL Database
 ---
 
 # Azure SQL Database の自動フェールオーバー グループでアプリケーションの回復性を実現する
